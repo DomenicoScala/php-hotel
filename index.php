@@ -50,6 +50,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Hotel</title>
+
+        <link rel="stylesheet" href="./css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
     </head>
     <body>
         
@@ -59,17 +62,28 @@
 
         <main>
             <div>
-                <?php 
+                
+            <?php 
                     foreach($hotels as $hotel){
                         echo '<p>'.'Nome: '.$hotel['name'].'</p>';
                         echo '<p>'.'Descrizione: '.$hotel['description'].'</p>';
-                        echo '<p>'.'Parcheggio: '.$hotel['parking'].'</p>';
+                        if($hotel['parking'] == true){
+                            echo '<p>Parcheggio: SI </p>';
+                        }
+                        else{
+                            echo '<p>Parcheggio:NO </p>';
+                        }
                         echo '<p>'.'Voto: '.$hotel['vote'].'</p>';
                         echo '<p>'.'Distanza dal centro: '.$hotel['distance_to_center'].'</p>';
                         echo '<hr>';
                     }
                 ?>
+                
+
+
             </div>
         </main>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
